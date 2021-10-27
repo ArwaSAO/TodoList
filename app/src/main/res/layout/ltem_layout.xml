@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="50dp"
+    android:layout_margin="20dp"
+    android:paddingLeft="20dp"
+    android:paddingRight="20dp">
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="274dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="5"
+        android:text="TextView"
+        android:textColor="@color/cardview_dark_background"
+        android:textSize="16sp" />
+
+    <Button
+        android:id="@+id/edittask_button"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:backgroundTint="@color/white"
+        android:shadowColor="@color/white"
+        android:text="+"
+        android:textColor="@color/black"
+        android:textSize="20sp"
+        app:strokeColor="@color/white" />
+
+    <Button
+        android:id="@+id/deletetask_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:backgroundTint="@color/white"
+        android:shadowColor="@color/white"
+        app:icon="@drawable/ic_baseline_delete_24"
+        app:iconPadding="5dp"
+        app:iconTint="@color/black"
+        app:iconTintMode="multiply"
+        app:strokeColor="@color/white" />
+
+    <CheckBox
+        android:id="@+id/task_checkBox"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_weight="1" />
+</LinearLayout>
