@@ -6,14 +6,11 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
-import android.widget.CheckBox
 import android.widget.DatePicker
 import android.widget.EditText
-import androidx.core.view.get
 import androidx.fragment.app.activityViewModels
 import androidx.navigation.fragment.findNavController
 import com.kotlin.todolist.R
-import java.sql.Date
 
 class EditTaskFragment : Fragment() {
     private val toDoListViewModel: ToDoListModel by activityViewModels()
@@ -40,17 +37,14 @@ class EditTaskFragment : Fragment() {
             val task = addTaskEditText.text.toString()
             val taskDescription = addTasDescriptionEditText.text.toString()
             val taskDate = addTaskDate.text.toString()
-//            val calender = addTaskCalender
-//                if (task.isNotEmpty() && taskDescription.isNotEmpty()) {
-//
-//                    toDoListViewModel.addItem(
-//                        task,
-//                        taskDescription,
-//                        taskDate.toString()
-//                        calender.toString())
-//                    findNavController().popBackStack()
-//
-//                }
+           val calender = addTaskCalender
+               if (task.isNotEmpty() && taskDescription.isNotEmpty()) {
+
+                    toDoListViewModel.addItem(task, taskDescription, taskDate.toString(),  calender.toString())
+
+                    findNavController().popBackStack()
+
+               }
 
         }
         }

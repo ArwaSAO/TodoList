@@ -6,7 +6,6 @@ import androidx.lifecycle.viewModelScope
 import com.kotlin.todolist.database.model.ToDoListItemModel
 import com.kotlin.todolist.reposetories.ToDoListRepository
 import kotlinx.coroutines.launch
-import java.sql.Date
 
 
 class ToDoListModel:ViewModel() {
@@ -15,7 +14,7 @@ class ToDoListModel:ViewModel() {
     var toDoListItems = toDoListRepository .getItems()
     var selectedItemMutableLiveData = MutableLiveData<ToDoListItemModel>()
 
-    fun addItem(taskName:String, taskDescription:String, taskDate:Date, taskDodate:Date, status:Boolean){
+    fun addItem(taskName:String, taskDescription:String, taskDate: String, taskDodate: String, status:Boolean){
         viewModelScope.launch {
             toDoListRepository.addItem(ToDoListItemModel(taskName, taskDescription, taskDate, taskDodate, status))
         }
@@ -32,6 +31,10 @@ class ToDoListModel:ViewModel() {
         viewModelScope.launch {
             toDoListRepository.deleteItem(itemModel)
         }
+    }
+
+    fun addItem(taskName: String, taskDescription: String, taskDate: String, taskDodate: String) {
+
     }
 
 }

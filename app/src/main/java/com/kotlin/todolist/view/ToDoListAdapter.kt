@@ -20,7 +20,7 @@ RecyclerView.Adapter<ToDoListAdapter.ToDoListViewHolder>(){
         val taskDescriptionTextView:TextView = view.findViewById(R.id.your_task_description)
         val taskDateTextView: TextView = view.findViewById(R.id.your_task_date)
         val taskDoDateTextView:TextView = view.findViewById(R.id.yourtask_dodate)
-        val taskStatusTextView:CheckBox = view.findViewById(R.id.task_checkbox)
+        val taskStatusCheckBox:CheckBox = view.findViewById(R.id.task_checkbox)
         val backButton: Button = view.findViewById(R.id.back_button)
     }
 
@@ -46,13 +46,13 @@ RecyclerView.Adapter<ToDoListAdapter.ToDoListViewHolder>(){
         holder.taskDoDateTextView.text = item.taskDodate.toString()
 
 
-        holder.backButton.setOnClickListener {
-            toDoListViewModel.selectedItemMutableLiveData.postValue(item)
-            it.findNavController().navigate(R.id.action_checkListFragment1_to_taskDetailsFragment)
+        holder.backButton.setOnClickListener {view ->
+            toDoListItemViewModel.selectedItemMutableLiveData.postValue(item)
+            view.findNavController().navigate(R.id.action_checkListFragment1_to_taskDetailsFragment)
         }
 
-        holder.taskStatusTextView.setOnClickListener {
-            item.status = holder.taskStatusTextView.isChecked
+        holder.taskStatusCheckBox.setOnClickListener {
+            item.status = holder.taskStatusCheckBox.isChecked
             toDoListItemViewModel.updateItem(item)
         }
 

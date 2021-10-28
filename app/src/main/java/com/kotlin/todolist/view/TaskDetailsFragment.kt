@@ -8,6 +8,7 @@ import android.view.ViewGroup
 import android.widget.Button
 import android.widget.TextView
 import androidx.fragment.app.activityViewModels
+import androidx.lifecycle.Observer
 import androidx.navigation.fragment.findNavController
 import com.kotlin.todolist.R
 import com.kotlin.todolist.database.model.ToDoListItemModel
@@ -16,7 +17,7 @@ import com.kotlin.todolist.database.model.ToDoListItemModel
 class TaskDetailsFragment : Fragment() {
 
 
-    private val inventoryViewModel: ToDoListModel by activityViewModels()
+    private val listViewModel: ToDoListModel by activityViewModels()
     private lateinit var selectedItem: ToDoListItemModel
 
     override fun onCreateView(
@@ -35,11 +36,11 @@ class TaskDetailsFragment : Fragment() {
         val yourTaskDoDateTextView: TextView = view.findViewById(R.id.yourtask_dodate)
         val taskBackButton: Button =view.findViewById(R.id.back_button)
 
-        inventoryViewModel.selectedItemMutableLiveData.observe(viewLifecycleOwner, Observer {
+        listViewModel.selectedItemMutableLiveData.observe(viewLifecycleOwner, Observer {
             it?.let { item ->
-                yourTaskTextView.text = item.task
+                yourTaskTextView.text = item.taskName
                 yourTaskDescriptionTextView.text = item.taskDescription
-                yourTaskDateTextView.text = item.taskdate
+                yourTaskDateTextView.text = item.taskDodate
                 yourTaskDoDateTextView.text = item.taskDodate
                 selectedItem = item
 
@@ -47,7 +48,8 @@ class TaskDetailsFragment : Fragment() {
         })
 
         taskBackButton.setOnClickListener {
-            inventoryViewModel.deleteItem(selectedItem)
+            listViewModel.deleteItem(selectedItem)
+
             findNavController().popBackStack()
         }
 

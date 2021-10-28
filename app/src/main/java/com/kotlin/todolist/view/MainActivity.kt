@@ -17,16 +17,15 @@ class MainActivity : AppCompatActivity() {
         ToDoListRepository.init(this)
 
 
-//        val navHostFragment =
-//            supportFragmentManager.findFragmentById(R.id.fragmentContainerView) as NavHostFragment
-//
-//        navController = navHostFragment.navController
-//
-//        setupActionBarWithNavController(navController)
-//    }
-//
-//    override fun onSupportNavigateUp(): Boolean {
-//        return navController.navigateUp()|| super.onSupportNavigateUp(
+       val navHostFragment = supportFragmentManager
+         .findFragmentById(R.id.fragmentContainerView) as NavHostFragment
+      navController = navHostFragment.navController
+
+     setupActionBarWithNavController(navController)
+    }
+
+    override fun onSupportNavigateUp(): Boolean {
+        return navController.navigateUp()|| super.onSupportNavigateUp(
 
 
 

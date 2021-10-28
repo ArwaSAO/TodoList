@@ -42,11 +42,10 @@ class CheckListFragment1 : Fragment() {
         // observer this line is working for live data
 
         toDoListViewModel.toDoListItems.observe(viewLifecycleOwner, Observer {
-            it?.let{items -> // check the data it wont be null
+            it?.let { items ->
                 toDoListItems.clear()
                 toDoListItems.addAll(items)
-                toDoListItems.notifyDataSetChanged()
-
+                listAdapter.notifyDataSetChanged()
             }
         })
         // add action to the floating button
