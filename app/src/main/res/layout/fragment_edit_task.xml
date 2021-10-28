@@ -8,6 +8,20 @@
     android:layout_margin="30dp"
     tools:context=".view.EditTaskFragment">
 
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" />
+    </ScrollView>
+
     <EditText
         android:id="@+id/addtask_edittext"
         android:layout_width="0dp"
@@ -35,12 +49,15 @@
     <EditText
         android:id="@+id/taskDescription_edittext"
         android:layout_width="0dp"
-        android:layout_height="wrap_content"
+        android:layout_height="200dp"
         android:layout_marginTop="15dp"
         android:backgroundTint="@color/design_default_color_surface"
         android:ems="10"
+        android:gravity="top"
         android:hint="Your Task Description"
         android:inputType="textPersonName"
+        android:lines="10"
+        android:maxLines="10"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"

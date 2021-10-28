@@ -1,9 +1,7 @@
 package com.kotlin.todolist.database
 
 import androidx.lifecycle.LiveData
-import androidx.room.Dao
-import androidx.room.Insert
-import androidx.room.Query
+import androidx.room.*
 import com.kotlin.todolist.database.model.ToDoListItemModel
 
 
@@ -14,8 +12,18 @@ interface ToDoListDao {
 
 
     @Insert
-    suspend fun addItem(toDoListItemModel: ToDoListItemModel)
+    suspend fun addItemModel(toDoListItemModel: ToDoListItemModel)
 
     @Query("SELECT * FROM todolistitemmodel")
     fun getItems():LiveData<List<ToDoListItemModel>>
+
+
+    @Update
+    suspend fun UpdateItemModel(toDoListItemModel: ToDoListItemModel)
+
+
+    @Delete
+    suspend fun deleteItemModel(itemModel: ToDoListItemModel)
+
+
 }
