@@ -8,7 +8,7 @@
     tools:context=".view.TaskDetailsFragment" >
 
     <TextView
-        android:id="@+id/taskname_text_view"
+        android:id="@+id/yourtask_textview"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_margin="30dp"
@@ -28,10 +28,10 @@
         android:backgroundTintMode="multiply"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/taskname_text_view" />
+        app:layout_constraintTop_toBottomOf="@+id/yourtask_textview" />
 
     <TextView
-        android:id="@+id/task_date_textview"
+        android:id="@+id/yourtask_date"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_margin="30dp"
@@ -51,10 +51,10 @@
         android:backgroundTintMode="multiply"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/task_date_textview" />
+        app:layout_constraintTop_toBottomOf="@+id/yourtask_date" />
 
     <TextView
-        android:id="@+id/task_duodate_textview"
+        android:id="@+id/yourtask_dodate"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_margin="30dp"
@@ -74,10 +74,10 @@
         android:backgroundTintMode="multiply"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/task_duodate_textview" />
+        app:layout_constraintTop_toBottomOf="@+id/yourtask_dodate" />
 
     <TextView
-        android:id="@+id/textView4"
+        android:id="@+id/yourtask_description"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_margin="30dp"
@@ -96,7 +96,7 @@
         android:backgroundTint="@android:color/holo_orange_light"
         android:backgroundTintMode="multiply"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView4" />
+        app:layout_constraintTop_toBottomOf="@+id/yourtask_description" />
 
     <Button
         android:id="@+id/back_button"

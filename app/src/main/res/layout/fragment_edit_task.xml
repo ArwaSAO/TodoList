@@ -23,7 +23,7 @@
     </ScrollView>
 
     <EditText
-        android:id="@+id/addtask_edittext"
+        android:id="@+id/add_your_task"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="15dp"
@@ -44,10 +44,10 @@
         android:background="@android:drawable/button_onoff_indicator_on"
         android:backgroundTint="@android:color/holo_orange_light"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/addtask_edittext" />
+        app:layout_constraintTop_toBottomOf="@+id/add_your_task" />
 
     <EditText
-        android:id="@+id/taskDescription_edittext"
+        android:id="@+id/your_task_description"
         android:layout_width="0dp"
         android:layout_height="200dp"
         android:layout_marginTop="15dp"
@@ -73,10 +73,10 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/taskDescription_edittext" />
+        app:layout_constraintTop_toBottomOf="@+id/your_task_description" />
 
     <TextView
-        android:id="@+id/task_date"
+        android:id="@+id/your_task_date"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="36dp"
@@ -97,15 +97,15 @@
         android:headerBackground="@android:color/holo_orange_light"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/task_date" />
+        app:layout_constraintTop_toBottomOf="@+id/your_task_date" />
 
     <Button
-        android:id="@+id/save_button"
+        android:id="@+id/task_save_button"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginBottom="30dp"
         android:backgroundTint="@android:color/holo_orange_light"
-        android:text="SAVE"
+        android:text=" Save your Task"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"

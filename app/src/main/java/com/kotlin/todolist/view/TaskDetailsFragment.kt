@@ -5,30 +5,19 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
+import android.widget.TextView
+import androidx.fragment.app.activityViewModels
+import androidx.navigation.fragment.findNavController
 import com.kotlin.todolist.R
+import com.kotlin.todolist.database.model.ToDoListItemModel
 
-// TODO: Rename parameter arguments, choose names that match
-// the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-private const val ARG_PARAM1 = "param1"
-private const val ARG_PARAM2 = "param2"
 
-/**
- * A simple [Fragment] subclass.
- * Use the [TaskDetailsFragment.newInstance] factory method to
- * create an instance of this fragment.
- */
 class TaskDetailsFragment : Fragment() {
-    // TODO: Rename and change types of parameters
-    private var param1: String? = null
-    private var param2: String? = null
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        arguments?.let {
-            param1 = it.getString(ARG_PARAM1)
-            param2 = it.getString(ARG_PARAM2)
-        }
-    }
+
+    private val inventoryViewModel: ToDoListModel by activityViewModels()
+    private lateinit var selectedItem: ToDoListItemModel
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -37,24 +26,31 @@ class TaskDetailsFragment : Fragment() {
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_task_details, container, false)
     }
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
 
-    companion object {
-        /**
-         * Use this factory method to create a new instance of
-         * this fragment using the provided parameters.
-         *
-         * @param param1 Parameter 1.
-         * @param param2 Parameter 2.
-         * @return A new instance of fragment TaskDetailsFragment.
-         */
-        // TODO: Rename and change types and number of parameters
-        @JvmStatic
-        fun newInstance(param1: String, param2: String) =
-            TaskDetailsFragment().apply {
-                arguments = Bundle().apply {
-                    putString(ARG_PARAM1, param1)
-                    putString(ARG_PARAM2, param2)
-                }
+        val nameTextView: TextView = view.findViewById(R.id.name_item_textView)
+        val priceTextView: TextView = view.findViewById(R.id.item_price_textView2)
+        val inStockTextView: TextView = view.findViewById(R.id.item_instock_textView4)
+        val deleteButton: Button = view.findViewById(R.id.delete_button)
+
+        inventoryViewModel.selectedItemMutableLiveData.observe(viewLifecycleOwner, Observer {
+            it?.let { item ->
+                nameTextView.text = item.name
+                priceTextView.text = "${item.price} SAR "
+                inStockTextView.text = "In Stock:${item.inStock}"
+                selectedItem = item
+
             }
+        })
+
+        deleteButton.setOnClickListener {
+            inventoryViewModel.deleteItem(selectedItem)
+            findNavController().popBackStack()
+        }
+
     }
+
+
+
 }

@@ -35,7 +35,7 @@ class ToDoListRepository (context: Context){
         }
 
         fun get(): ToDoListRepository{
-            return instance?:throw Exception("Inventory Repository must be  initialize")
+            return instance?:throw Exception("ToDoList Repository must be  initialize")
         }
 
     }

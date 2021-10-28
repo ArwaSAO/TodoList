@@ -14,7 +14,7 @@
         android:orientation="vertical">
 
         <TextView
-            android:id="@+id/taskname_textview"
+            android:id="@+id/your_task_text"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_gravity="center"
@@ -24,7 +24,7 @@
             android:textSize="16sp" />
 
         <TextView
-            android:id="@+id/creationdate_textview"
+            android:id="@+id/yourtask_creation_date"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_gravity="center"
