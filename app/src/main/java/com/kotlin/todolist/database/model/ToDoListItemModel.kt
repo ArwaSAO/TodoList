@@ -12,7 +12,7 @@ data class ToDoListItemModel(
     val taskDescription: String,
     val taskDate: Date,
     val taskDodate: Date,
-    val status: Boolean,
+    var status: Boolean,
     @PrimaryKey(autoGenerate = true)
     val id: Int = 0
 )

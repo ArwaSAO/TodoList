@@ -29,22 +29,24 @@ class TaskDetailsFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        val nameTextView: TextView = view.findViewById(R.id.name_item_textView)
-        val priceTextView: TextView = view.findViewById(R.id.item_price_textView2)
-        val inStockTextView: TextView = view.findViewById(R.id.item_instock_textView4)
-        val deleteButton: Button = view.findViewById(R.id.delete_button)
+        val yourTaskTextView: TextView = view.findViewById(R.id.yourtask_textview)
+        val yourTaskDescriptionTextView: TextView = view.findViewById(R.id.yourtask_description)
+        val yourTaskDateTextView: TextView = view.findViewById(R.id.yourtask_date)
+        val yourTaskDoDateTextView: TextView = view.findViewById(R.id.yourtask_dodate)
+        val taskBackButton: Button =view.findViewById(R.id.back_button)
 
         inventoryViewModel.selectedItemMutableLiveData.observe(viewLifecycleOwner, Observer {
             it?.let { item ->
-                nameTextView.text = item.name
-                priceTextView.text = "${item.price} SAR "
-                inStockTextView.text = "In Stock:${item.inStock}"
+                yourTaskTextView.text = item.task
+                yourTaskDescriptionTextView.text = item.taskDescription
+                yourTaskDateTextView.text = item.taskdate
+                yourTaskDoDateTextView.text = item.taskDodate
                 selectedItem = item
 
             }
         })
 
-        deleteButton.setOnClickListener {
+        taskBackButton.setOnClickListener {
             inventoryViewModel.deleteItem(selectedItem)
             findNavController().popBackStack()
         }
