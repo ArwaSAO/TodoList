@@ -1,6 +1,7 @@
 package com.kotlin.todolist.view
 
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -40,9 +41,11 @@ class CheckListFragment1 : Fragment() {
         // observer this line is working for live data
 
         toDoListViewModel.toDoListItems.observe(viewLifecycleOwner, Observer {
+
+
             it?.let { items ->
                 toDoListItems.clear()
-                toDoListItems.addAll(toDoListItems)
+                toDoListItems.addAll(items)
                 listAdapter.notifyDataSetChanged()
             }
         })

@@ -16,7 +16,7 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-        Toast.makeText(this, "Hello Arwa", Toast.LENGTH_SHORT).show()
+        Toast.makeText(this, "Hello Arwa Let's be Active and Start Doing your List", Toast.LENGTH_SHORT).show()
 
         ToDoListRepository.init(this)
 

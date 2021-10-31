@@ -77,7 +77,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="15dp"
-                android:hint="Take Do Date:"
+                android:hint="Task Do Date:"
                 android:textColor="@color/cardview_dark_background"
                 android:textSize="16sp" />
         </androidx.cardview.widget.CardView>

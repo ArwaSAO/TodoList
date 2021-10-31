@@ -8,6 +8,7 @@ import android.view.ViewGroup
 import android.widget.Button
 import android.widget.DatePicker
 import android.widget.EditText
+import android.widget.TextView
 import androidx.fragment.app.activityViewModels
 import androidx.navigation.fragment.findNavController
 import com.kotlin.todolist.R
@@ -29,15 +30,15 @@ class EditTaskFragment : Fragment() {
 
         val addTaskEditText: EditText = view.findViewById(R.id.add_your_task)
         val addTasDescriptionEditText: EditText = view.findViewById(R.id.your_task_description)
-        val addTaskDate: EditText = view.findViewById(R.id.your_task_date)
-        val datePicker: DatePicker = view.findViewById(R.id.date_Picker)
+        val addTaskDate: TextView = view.findViewById(R.id.your_task_date)
+        val doDate: DatePicker = view.findViewById(R.id.date_Picker)
         val saveButton: Button = view.findViewById(R.id.task_save_button)
 
         saveButton.setOnClickListener {
             val task = addTaskEditText.text.toString()
             val taskDescription = addTasDescriptionEditText.text.toString()
             val taskDate = addTaskDate.text.toString()
-            val calender = datePicker.maxDate.toString()
+            val calender = "${doDate.year}/${doDate.month+1}/${doDate.dayOfMonth}"
             if (task.isNotEmpty() && taskDescription.isNotEmpty()) {
 
                 toDoListViewModel.addItem(task, taskDescription, taskDate, calender, false)
