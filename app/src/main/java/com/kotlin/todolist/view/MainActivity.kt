@@ -3,12 +3,16 @@ package com.kotlin.todolist.view
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
+import androidx.navigation.NavController
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.setupActionBarWithNavController
 import com.kotlin.todolist.R
 import com.kotlin.todolist.reposetories.ToDoListRepository
 
 class MainActivity : AppCompatActivity() {
+
+    private lateinit var navController: NavController
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -25,10 +29,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     override fun onSupportNavigateUp(): Boolean {
-        return navController.navigateUp()|| super.onSupportNavigateUp(
-
-
-
+        return navController.navigateUp()|| super.onSupportNavigateUp()
 
     }
 }

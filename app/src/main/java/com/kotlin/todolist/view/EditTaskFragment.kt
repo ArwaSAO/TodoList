@@ -40,7 +40,7 @@ class EditTaskFragment : Fragment() {
            val calender = addTaskCalender
                if (task.isNotEmpty() && taskDescription.isNotEmpty()) {
 
-                    toDoListViewModel.addItem(task, taskDescription, taskDate.toString(),  calender.toString())
+                    toDoListViewModel.addItem(task, taskDescription, taskDate,  calender.toString())
 
                     findNavController().popBackStack()
 

@@ -50,7 +50,7 @@ class CheckListFragment1 : Fragment() {
         })
         // add action to the floating button
         addFloatingButton.setOnClickListener {
-            findNavController().navigate(R.id.action_checkListFragment1_to_taskDetailsFragment)
+            findNavController().navigate(R.id.action_checkListFragment1_to_editTaskFragment)
         }
     }
 
