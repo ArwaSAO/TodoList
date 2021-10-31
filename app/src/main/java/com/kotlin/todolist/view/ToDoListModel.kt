@@ -6,17 +6,24 @@ import androidx.lifecycle.viewModelScope
 import com.kotlin.todolist.database.model.ToDoListItemModel
 import com.kotlin.todolist.reposetories.ToDoListRepository
 import kotlinx.coroutines.launch
+import java.text.SimpleDateFormat
+import java.util.*
 
 
 class ToDoListModel:ViewModel() {
 
     private val toDoListRepository = ToDoListRepository.get()
+
     var toDoListItems = toDoListRepository .getItems()
     var selectedItemMutableLiveData = MutableLiveData<ToDoListItemModel>()
 
     fun addItem(taskName:String, taskDescription:String, taskDate: String, taskDodate: String, status:Boolean){
+
+
+        val simpleDateFormat = SimpleDateFormat("dd/M/yyy hh:mm:ss")
+        val currentDate = simpleDateFormat.format(Date())
         viewModelScope.launch {
-            toDoListRepository.addItem(ToDoListItemModel(taskName, taskDescription, taskDate, taskDodate, status))
+            toDoListRepository.addItem(ToDoListItemModel(taskName, currentDate,taskDodate,taskDescription, status))
         }
     }
 
@@ -33,8 +40,6 @@ class ToDoListModel:ViewModel() {
         }
     }
 
-    fun addItem(taskName: String, taskDescription: String, taskDate: String, taskDodate: String) {
 
-    }
 
 }

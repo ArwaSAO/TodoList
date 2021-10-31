@@ -19,7 +19,7 @@ class EditTaskFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        // Inflate the layout for this fragment
+
         return inflater.inflate(R.layout.fragment_edit_task, container, false)
     }
 
@@ -30,24 +30,24 @@ class EditTaskFragment : Fragment() {
         val addTaskEditText: EditText = view.findViewById(R.id.add_your_task)
         val addTasDescriptionEditText: EditText = view.findViewById(R.id.your_task_description)
         val addTaskDate: EditText = view.findViewById(R.id.your_task_date)
-        val addTaskCalender: DatePicker = view.findViewById(R.id.date_Picker)
+        val datePicker: DatePicker = view.findViewById(R.id.date_Picker)
         val saveButton: Button = view.findViewById(R.id.task_save_button)
 
         saveButton.setOnClickListener {
             val task = addTaskEditText.text.toString()
             val taskDescription = addTasDescriptionEditText.text.toString()
             val taskDate = addTaskDate.text.toString()
-           val calender = addTaskCalender
-               if (task.isNotEmpty() && taskDescription.isNotEmpty()) {
+            val calender = datePicker.maxDate.toString()
+            if (task.isNotEmpty() && taskDescription.isNotEmpty()) {
 
-                    toDoListViewModel.addItem(task, taskDescription, taskDate,  calender.toString())
+                toDoListViewModel.addItem(task, taskDescription, taskDate, calender, false)
 
-                    findNavController().popBackStack()
+                findNavController().popBackStack()
 
-               }
+            }
 
         }
-        }
+    }
 
 
 }

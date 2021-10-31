@@ -20,7 +20,7 @@ RecyclerView.Adapter<ToDoListAdapter.ToDoListViewHolder>(){
         val taskDescriptionTextView:TextView = view.findViewById(R.id.your_task_description)
         val taskDateTextView: TextView = view.findViewById(R.id.your_task_date)
         val taskDoDateTextView:TextView = view.findViewById(R.id.yourtask_dodate)
-        val taskStatusCheckBox:CheckBox = view.findViewById(R.id.task_checkbox)
+        val taskStatusCheckBox:CheckBox = view.findViewById(R.id.task_checkBox)
         val backButton: Button = view.findViewById(R.id.back_button)
     }
 

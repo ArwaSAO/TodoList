@@ -7,7 +7,8 @@ import com.kotlin.todolist.database.model.ToDoListItemModel
 import java.lang.Exception
 
 private const val DATABASE_NAME = "todolist_database"
-class ToDoListRepository (context: Context){
+
+class ToDoListRepository(context: Context) {
     private val database: ToDoListDataBase =
         Room.databaseBuilder(
             context,
@@ -23,19 +24,19 @@ class ToDoListRepository (context: Context){
     suspend fun upDateItem(itemModel: ToDoListItemModel) = toDoListDao.UpdateItemModel(itemModel)
     suspend fun deleteItem(itemModel: ToDoListItemModel) = toDoListDao.deleteItemModel(itemModel)
 
-    companion object{
+    companion object {
         private var instance: ToDoListRepository? = null
 
         // assign for declaration
-        fun init(context: Context){
-            if(instance == null)
+        fun init(context: Context) {
+            if (instance == null)
                 instance = ToDoListRepository(context)
 
 
         }
 
-        fun get(): ToDoListRepository{
-            return instance?:throw Exception("ToDoList Repository must be  initialize")
+        fun get(): ToDoListRepository {
+            return instance ?: throw Exception("ToDoList Repository must be  initialize")
         }
 
     }

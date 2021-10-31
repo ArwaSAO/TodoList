@@ -21,7 +21,6 @@ class CheckListFragment1 : Fragment() {
     private val toDoListViewModel: ToDoListModel by activityViewModels()
 
 
-
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -34,7 +33,6 @@ class CheckListFragment1 : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         val listRecyclerView: RecyclerView = view.findViewById(R.id.check_list_recycler_view)
         val addFloatingButton: FloatingActionButton = view.findViewById(R.id.floatingActionButton)
-      //  val myCheckList: TextView = view.findViewById<TextView>(R.id.check_list_text_view)
 
         val listAdapter = ToDoListAdapter(toDoListItems, toDoListViewModel)
         listRecyclerView.adapter = listAdapter
@@ -44,7 +42,7 @@ class CheckListFragment1 : Fragment() {
         toDoListViewModel.toDoListItems.observe(viewLifecycleOwner, Observer {
             it?.let { items ->
                 toDoListItems.clear()
-                toDoListItems.addAll(items)
+                toDoListItems.addAll(toDoListItems)
                 listAdapter.notifyDataSetChanged()
             }
         })
@@ -53,8 +51,5 @@ class CheckListFragment1 : Fragment() {
             findNavController().navigate(R.id.action_checkListFragment1_to_editTaskFragment)
         }
     }
-
-
-
-
 }
+

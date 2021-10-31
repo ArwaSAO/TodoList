@@ -16,20 +16,20 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-       Toast.makeText(this, "Hello Arwa", Toast.LENGTH_SHORT).show()
+        Toast.makeText(this, "Hello Arwa", Toast.LENGTH_SHORT).show()
 
         ToDoListRepository.init(this)
 
 
-       val navHostFragment = supportFragmentManager
-         .findFragmentById(R.id.fragmentContainerView) as NavHostFragment
-      navController = navHostFragment.navController
+        val navHostFragment = supportFragmentManager
+            .findFragmentById(R.id.fragmentContainerView) as NavHostFragment
+        navController = navHostFragment.navController
 
-     setupActionBarWithNavController(navController)
+        setupActionBarWithNavController(navController)
     }
 
     override fun onSupportNavigateUp(): Boolean {
-        return navController.navigateUp()|| super.onSupportNavigateUp()
+        return navController.navigateUp() || super.onSupportNavigateUp()
 
     }
 }

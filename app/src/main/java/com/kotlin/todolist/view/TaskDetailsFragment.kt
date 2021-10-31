@@ -27,14 +27,15 @@ class TaskDetailsFragment : Fragment() {
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_task_details, container, false)
     }
+
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
         val yourTaskTextView: TextView = view.findViewById(R.id.yourtask_textview)
-        val yourTaskDescriptionTextView: TextView = view.findViewById(R.id.yourtask_description)
+        val yourTaskDescriptionTextView: TextView = view.findViewById(R.id.your_task_description)
         val yourTaskDateTextView: TextView = view.findViewById(R.id.yourtask_date)
         val yourTaskDoDateTextView: TextView = view.findViewById(R.id.yourtask_dodate)
-        val taskBackButton: Button =view.findViewById(R.id.back_button)
+        val taskBackButton: Button = view.findViewById(R.id.back_button)
 
         listViewModel.selectedItemMutableLiveData.observe(viewLifecycleOwner, Observer {
             it?.let { item ->
@@ -54,7 +55,6 @@ class TaskDetailsFragment : Fragment() {
         }
 
     }
-
 
 
 }

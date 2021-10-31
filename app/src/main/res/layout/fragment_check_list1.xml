@@ -5,44 +5,40 @@
     android:id="@+id/frameLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".view.CheckListFragment1" >
+    android:backgroundTint="@color/cardview_light_background"
+    tools:context=".view.CheckListFragment1">
 
     <LinearLayout
         android:id="@+id/linearLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="30dp"
+        android:layout_margin="15dp"
         android:orientation="vertical"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
-        <TextView
-            android:id="@+id/check_list_text_view"
+        <androidx.cardview.widget.CardView
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="30dp"
-            android:text="My Check List"
-            android:textColor="@color/cardview_dark_background"
-            android:textSize="24sp" />
+            android:layout_height="match_parent"
+            app:cardBackgroundColor="@color/material_on_primary_emphasis_medium">
 
-        <View
-            android:id="@+id/My_Checklist_divider"
-            android:layout_width="match_parent"
-            android:layout_height="1dp"
-            android:layout_marginLeft="30dp"
-            android:layout_marginRight="30dp"
-            android:layout_marginBottom="30dp"
-            android:background="?android:attr/actionModeSplitBackground"
-            android:backgroundTint="@android:color/holo_orange_light"
-            android:visibility="visible" />
+            <TextView
+                android:id="@+id/check_list_text_view"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="15dp"
+                android:text="My Check List"
+                android:textColor="@android:color/holo_orange_dark"
+                android:textSize="24sp" />
+        </androidx.cardview.widget.CardView>
+
     </LinearLayout>
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/check_list_recycler_view"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:layout_margin="40dp"
         app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
