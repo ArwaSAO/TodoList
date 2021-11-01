@@ -5,14 +5,15 @@
     android:id="@+id/frameLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:backgroundTint="@color/cardview_light_background"
+    android:background="@android:color/darker_gray"
+    android:backgroundTint="@android:color/darker_gray"
     tools:context=".view.CheckListFragment1">
 
     <LinearLayout
         android:id="@+id/linearLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="15dp"
+        android:layout_marginTop="20dp"
         android:orientation="vertical"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -21,13 +22,14 @@
         <androidx.cardview.widget.CardView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            app:cardBackgroundColor="@color/material_on_primary_emphasis_medium">
+            app:cardBackgroundColor="@color/design_default_color_surface">
 
             <TextView
                 android:id="@+id/check_list_text_view"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="15dp"
+                android:backgroundTint="@color/cardview_light_background"
                 android:text="My Check List"
                 android:textColor="@android:color/holo_orange_dark"
                 android:textSize="24sp" />

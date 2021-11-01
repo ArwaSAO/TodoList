@@ -42,10 +42,9 @@ class CheckListFragment1 : Fragment() {
 
         toDoListViewModel.toDoListItems.observe(viewLifecycleOwner, Observer {
 
-
-            it?.let { items ->
+            it?.let {
                 toDoListItems.clear()
-                toDoListItems.addAll(items)
+                toDoListItems.addAll(it)
                 listAdapter.notifyDataSetChanged()
             }
         })

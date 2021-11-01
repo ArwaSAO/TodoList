@@ -1,14 +1,18 @@
 package com.kotlin.todolist.view
 
+import android.graphics.Paint
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.CheckBox
 import android.widget.ImageButton
 import android.widget.TextView
+import androidx.navigation.findNavController
 import androidx.recyclerview.widget.RecyclerView
 import com.kotlin.todolist.R
 import com.kotlin.todolist.database.model.ToDoListItemModel
+import java.text.SimpleDateFormat
+import java.util.*
 
 class ToDoListAdapter(val items:List<ToDoListItemModel>, val toDoListItemViewModel: ToDoListModel):
 RecyclerView.Adapter<ToDoListAdapter.ToDoListViewHolder>(){
@@ -51,11 +55,28 @@ RecyclerView.Adapter<ToDoListAdapter.ToDoListViewHolder>(){
         //    toDoListItemViewModel.selectedItemMutableLiveData.postValue(item)
        // }
 
+        holder.itemView.setOnClickListener {
+         toDoListItemViewModel.selectedItemMutableLiveData.postValue(item)
+            it.findNavController().navigate(R.id.action_checkListFragment1_to_taskDetailsFragment)
+        }
 
+
+//        val currentDate = Date()
+//        val format = SimpleDateFormat("yyyy,MM,dd")
+//        val deadline = format.parse(item.taskDodate)
+//        if (currentDate>deadline){
+//            holder.taskNameTextView.paintFlags = Paint.STRIKE_THRU_TEXT_FLAG
+//        }
 
         holder.taskStatusCheckBox.setOnClickListener {
             item.status = holder.taskStatusCheckBox.isChecked
             toDoListItemViewModel.updateItem(item)
+
+//            if(holder.taskStatusCheckBox.isChecked){
+//            holder.taskNameTextView.setPaintFlags(Paint.STRIKE_THRU_TEXT_FLAG)
+//        }else {
+//            holder.taskNameTextView.setPaintFlags(0)
+//            }
         }
 
 

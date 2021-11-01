@@ -5,7 +5,8 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Button
+import android.widget.ImageButton
+import android.widget.ImageView
 import android.widget.TextView
 import androidx.fragment.app.activityViewModels
 import androidx.lifecycle.Observer
@@ -31,28 +32,39 @@ class TaskDetailsFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        val yourTaskTextView: TextView = view.findViewById(R.id.yourtask_textview)
-        val yourTaskDescriptionTextView: TextView = view.findViewById(R.id.your_task_description)
-        val yourTaskDateTextView: TextView = view.findViewById(R.id.yourtask_date)
-        val yourTaskDoDateTextView: TextView = view.findViewById(R.id.yourtask_dodate)
-        val taskBackButton: Button = view.findViewById(R.id.back_button)
+
+        val yourTaskTextView: TextView = view.findViewById(R.id.yourtask_edittext)
+        val yourTaskDescriptionTextView: TextView = view.findViewById(R.id.task_dodate_textview)
+        //val yourTaskDateTextView: TextView = view.findViewById(R.id.yourtask_date)
+        val yourTaskDoDateTextView: TextView = view.findViewById(R.id.taskdodate_edittext)
+      //  val taskBackButton: Button = view.findViewById(R.id.back_button)
+        val editTaskButton: ImageButton = view.findViewById(R.id.edittask_button)
+
 
         listViewModel.selectedItemMutableLiveData.observe(viewLifecycleOwner, Observer {
             it?.let { item ->
-                yourTaskTextView.text = item.taskName
-                yourTaskDescriptionTextView.text = item.taskDescription
-                yourTaskDateTextView.text = item.taskDodate
-                yourTaskDoDateTextView.text = item.taskDodate
+                yourTaskTextView.setText(item.taskName)
+                yourTaskDescriptionTextView.setText(item.taskDescription)
+                yourTaskDoDateTextView.setText(item.taskDodate)
                 selectedItem = item
 
             }
         })
 
-        taskBackButton.setOnClickListener {
-            listViewModel.deleteItem(selectedItem)
+        editTaskButton.setOnClickListener {
+            selectedItem.taskName = yourTaskTextView.text.toString()
+            selectedItem.taskDescription = yourTaskDescriptionTextView.text.toString()
+            selectedItem.taskDodate = yourTaskDoDateTextView.text.toString()
 
+            listViewModel.updateItem(selectedItem)
             findNavController().popBackStack()
         }
+
+//        taskBackButton.setOnClickListener {
+//            listViewModel.deleteItem(selectedItem)
+//
+//            findNavController().popBackStack()
+//        }
 
     }
 

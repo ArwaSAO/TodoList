@@ -6,10 +6,10 @@ import androidx.room.PrimaryKey
 // starting creating table
 @Entity
 data class ToDoListItemModel(
-    val taskName: String,
-    val taskDescription: String,
-    val taskDate: String,
-    val taskDodate: String,
+    var taskName: String,
+    var taskDescription: String,
+    var taskDate: String,
+    var taskDodate: String,
     var status: Boolean,
     @PrimaryKey(autoGenerate = true)
     val id: Int = 0
