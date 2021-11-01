@@ -83,6 +83,7 @@
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
 
+
                 <EditText
                     android:id="@+id/task_dodate_textview"
                     android:layout_width="0dp"
@@ -126,7 +127,7 @@
                     app:layout_constraintTop_toTopOf="parent" />
 
                 <EditText
-                    android:id="@+id/taskdodate_edittext"
+                    android:id="@+id/taskdescription_edittext"
                     android:layout_width="match_parent"
                     android:layout_height="0dp"
                     android:inputType="textPersonName"

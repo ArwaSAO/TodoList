@@ -34,9 +34,9 @@ class TaskDetailsFragment : Fragment() {
 
 
         val yourTaskTextView: TextView = view.findViewById(R.id.yourtask_edittext)
-        val yourTaskDescriptionTextView: TextView = view.findViewById(R.id.task_dodate_textview)
+        val yourTaskDoDateTextView: TextView = view.findViewById(R.id.task_dodate_textview)
+        val yourTaskDescriptionTextView: TextView = view.findViewById(R.id.taskdescription_edittext)
         //val yourTaskDateTextView: TextView = view.findViewById(R.id.yourtask_date)
-        val yourTaskDoDateTextView: TextView = view.findViewById(R.id.taskdodate_edittext)
       //  val taskBackButton: Button = view.findViewById(R.id.back_button)
         val editTaskButton: ImageButton = view.findViewById(R.id.edittask_button)
 
@@ -44,8 +44,8 @@ class TaskDetailsFragment : Fragment() {
         listViewModel.selectedItemMutableLiveData.observe(viewLifecycleOwner, Observer {
             it?.let { item ->
                 yourTaskTextView.setText(item.taskName)
-                yourTaskDescriptionTextView.setText(item.taskDescription)
                 yourTaskDoDateTextView.setText(item.taskDodate)
+                yourTaskDescriptionTextView.setText(item.taskDescription)
                 selectedItem = item
 
             }
@@ -53,8 +53,8 @@ class TaskDetailsFragment : Fragment() {
 
         editTaskButton.setOnClickListener {
             selectedItem.taskName = yourTaskTextView.text.toString()
-            selectedItem.taskDescription = yourTaskDescriptionTextView.text.toString()
             selectedItem.taskDodate = yourTaskDoDateTextView.text.toString()
+            selectedItem.taskDescription = yourTaskDescriptionTextView.text.toString()
 
             listViewModel.updateItem(selectedItem)
             findNavController().popBackStack()

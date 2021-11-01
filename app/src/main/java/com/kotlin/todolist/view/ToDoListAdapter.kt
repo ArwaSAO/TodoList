@@ -61,22 +61,22 @@ RecyclerView.Adapter<ToDoListAdapter.ToDoListViewHolder>(){
         }
 
 
-//        val currentDate = Date()
-//        val format = SimpleDateFormat("yyyy,MM,dd")
-//        val deadline = format.parse(item.taskDodate)
-//        if (currentDate>deadline){
-//            holder.taskNameTextView.paintFlags = Paint.STRIKE_THRU_TEXT_FLAG
-//        }
+        val currentDate = Date()
+        val format = SimpleDateFormat("yyyy/MM/dd")
+        val deadline = format.parse(item.taskDodate)
+        if (currentDate>deadline){
+            holder.taskNameTextView.paintFlags = Paint.STRIKE_THRU_TEXT_FLAG
+        }
 
         holder.taskStatusCheckBox.setOnClickListener {
             item.status = holder.taskStatusCheckBox.isChecked
             toDoListItemViewModel.updateItem(item)
 
-//            if(holder.taskStatusCheckBox.isChecked){
-//            holder.taskNameTextView.setPaintFlags(Paint.STRIKE_THRU_TEXT_FLAG)
-//        }else {
-//            holder.taskNameTextView.setPaintFlags(0)
-//            }
+            if(holder.taskStatusCheckBox.isChecked){
+            holder.taskNameTextView.setPaintFlags(Paint.STRIKE_THRU_TEXT_FLAG)
+        }else {
+            holder.taskNameTextView.setPaintFlags(0)
+            }
         }
 
 
