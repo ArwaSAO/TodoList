@@ -20,7 +20,7 @@ class ToDoListModel:ViewModel() {
     fun addItem(taskName:String, taskDescription:String, taskDate: String, taskDodate: String, status:Boolean){
 
 
-        val simpleDateFormat = SimpleDateFormat("dd/M/yyy hh:mm:ss")
+        val simpleDateFormat = SimpleDateFormat("dd/MM/yyyy hh:mm:ss")
         val currentDate = simpleDateFormat.format(Date())
         viewModelScope.launch {
             toDoListRepository.addItem(ToDoListItemModel(taskName, taskDescription,currentDate,taskDodate, status))

@@ -42,7 +42,7 @@
         <androidx.cardview.widget.CardView
             android:id="@+id/cardView2"
             android:layout_width="match_parent"
-            android:layout_height="350dp"
+            android:layout_height="400dp"
             android:layout_marginLeft="15dp"
             android:layout_marginTop="15dp"
             android:layout_marginRight="15dp">
@@ -54,6 +54,7 @@
                 android:ems="10"
                 android:fontFamily="sans-serif-condensed"
                 android:paddingLeft="30dp"
+                android:paddingTop="15dp"
                 android:text="Pick The Date For Your Current Task:"
                 android:textColor="@color/cardview_dark_background"
                 android:textSize="16sp" />
@@ -106,7 +107,7 @@
         android:layout_marginLeft="15dp"
         android:layout_marginTop="15dp"
         android:layout_marginRight="15dp"
-        android:layout_marginBottom="60dp"
+        android:layout_marginBottom="20dp"
         android:backgroundTint="@android:color/holo_orange_light"
         android:text=" Save your Task"
         app:layout_constraintBottom_toBottomOf="parent"

@@ -1,5 +1,6 @@
 package com.kotlin.todolist.view
 
+import android.app.DatePickerDialog
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -13,6 +14,7 @@ import androidx.lifecycle.Observer
 import androidx.navigation.fragment.findNavController
 import com.kotlin.todolist.R
 import com.kotlin.todolist.database.model.ToDoListItemModel
+import java.util.*
 
 
 class TaskDetailsFragment : Fragment() {
@@ -39,7 +41,7 @@ class TaskDetailsFragment : Fragment() {
         //val yourTaskDateTextView: TextView = view.findViewById(R.id.yourtask_date)
       //  val taskBackButton: Button = view.findViewById(R.id.back_button)
         val editTaskButton: ImageButton = view.findViewById(R.id.edittask_button)
-
+        val editdate: ImageButton = view.findViewById(R.id.editdate_imageButton)
 
         listViewModel.selectedItemMutableLiveData.observe(viewLifecycleOwner, Observer {
             it?.let { item ->
@@ -60,6 +62,21 @@ class TaskDetailsFragment : Fragment() {
             findNavController().popBackStack()
         }
 
+        editdate.setOnClickListener {
+
+            //getting current day,month and year.
+
+            val calendar: Calendar = Calendar.getInstance()
+            val year: Int = calendar.get(Calendar.YEAR)
+            val month: Int = calendar.get(Calendar.MONTH)
+            val day: Int = calendar.get(Calendar.DAY_OF_MONTH)
+
+
+            val dpd = DatePickerDialog(view.context, DatePickerDialog.OnDateSetListener { view, year, month, day ->
+                yourTaskDoDateTextView.setText("" + day + "/" + month + "/" + year)
+            }, year, month, day)
+            dpd.show()
+        }
 //        taskBackButton.setOnClickListener {
 //            listViewModel.deleteItem(selectedItem)
 //

@@ -8,10 +8,13 @@
     android:backgroundTint="@color/white"
     android:orientation="vertical">
 
-    <androidx.cardview.widget.CardView
+    <com.google.android.material.card.MaterialCardView
         android:layout_width="match_parent"
         android:layout_height="80dp"
-        app:cardBackgroundColor="?android:attr/colorBackground">
+        app:cardBackgroundColor="?android:attr/colorBackground"
+        app:cardCornerRadius="5dp"
+        app:strokeColor="@android:color/darker_gray"
+        app:strokeWidth="2dp">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
@@ -33,7 +36,7 @@
                 app:layout_constraintTop_toTopOf="parent" />
 
             <TextView
-                android:id="@+id/task_creation_date"
+                android:id="@+id/task_dodate_text_view"
                 android:layout_width="235dp"
                 android:layout_height="15dp"
                 android:text="TextView"
@@ -68,6 +71,6 @@
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintVertical_bias="0.666" />
         </androidx.constraintlayout.widget.ConstraintLayout>
-    </androidx.cardview.widget.CardView>
+    </com.google.android.material.card.MaterialCardView>
 
 </LinearLayout>

@@ -14,6 +14,8 @@ import androidx.navigation.fragment.findNavController
 import com.kotlin.todolist.R
 
 class EditTaskFragment : Fragment() {
+
+
     private val toDoListViewModel: ToDoListModel by activityViewModels()
 
     override fun onCreateView(
@@ -39,16 +41,22 @@ class EditTaskFragment : Fragment() {
             val taskDescription = addTasDescriptionEditText.text.toString()
             val taskDate = addTaskDate.text.toString()
             val calender = "${doDate.year}/${doDate.month+1}/${doDate.dayOfMonth}"
+
+
+
+
             if (task.isNotEmpty() && taskDescription.isNotEmpty()) {
 
                 toDoListViewModel.addItem(task, taskDescription, taskDate, calender, false)
 
                 findNavController().popBackStack()
 
+
             }
 
         }
     }
+
 
 
 }

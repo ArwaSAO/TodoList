@@ -20,9 +20,10 @@ RecyclerView.Adapter<ToDoListAdapter.ToDoListViewHolder>(){
     class ToDoListViewHolder(view:View):RecyclerView.ViewHolder(view){
 
         val taskNameTextView:TextView = view.findViewById(R.id.task_text_view)
-        val creationDateTextview:TextView = view.findViewById(R.id.task_creation_date)
+        val taskdodate:TextView = view.findViewById(R.id.task_dodate_text_view)
         val taskStatusCheckBox:CheckBox = view.findViewById(R.id.task_checkBox)
         val deleteTaskButton: ImageButton = view.findViewById(R.id.delete_image_button)
+       // val taskdate: TextView = view.findViewById(R.id.)
         //val editTaskButton: ImageButton = view.findViewById(R.id.edit_button)
 
 
@@ -45,7 +46,8 @@ RecyclerView.Adapter<ToDoListAdapter.ToDoListViewHolder>(){
         val item = items[position]
 
         holder.taskNameTextView.text = item.taskName
-        holder.creationDateTextview.text =  item.taskDate
+        holder.taskdodate.text =  item.taskDodate
+       // holder.taskdate.text =  item.taskDate
 
         holder.deleteTaskButton.setOnClickListener {view ->
             toDoListItemViewModel.deleteItem(item)
