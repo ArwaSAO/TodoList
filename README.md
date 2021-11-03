@@ -1,6 +1,6 @@
 # TodoList
 -----------------------------------------------------------------------------------------------------------------------
-
+![tuwaiq.jpg](https://github.com/ArwaSAO/TodoList/blob/6acc02e9458cd6e9d3313ee8e0977ccdc52a7211/tuwaiq.jpg.jpeg)
 1)list of technologies:
 
 - kotlin it's programming language used create android Apps
@@ -12,7 +12,7 @@
 
 2)link to wireframes and user stories
 
-- Wireframes:
+- Wireframes: https://www.figma.com/file/hoMOkiOohzqnhOecmoUpIo/Untitled?node-id=5%3A95
  figma link
 
 
