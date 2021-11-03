@@ -55,7 +55,7 @@
                 android:paddingRight="20dp"
                 android:text="TextView"
                 android:textColor="@color/cardview_dark_background"
-                android:textSize="20sp"
+                android:textSize="18sp"
                 app:layout_constraintEnd_toStartOf="@+id/delete_image_button"
                 app:layout_constraintHorizontal_bias="1.0"
                 app:layout_constraintStart_toStartOf="parent"

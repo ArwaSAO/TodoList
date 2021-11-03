@@ -5,10 +5,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Button
-import android.widget.DatePicker
-import android.widget.EditText
-import android.widget.TextView
+import android.widget.*
 import androidx.fragment.app.activityViewModels
 import androidx.navigation.fragment.findNavController
 import com.kotlin.todolist.R
@@ -24,6 +21,7 @@ class EditTaskFragment : Fragment() {
     ): View? {
 
         return inflater.inflate(R.layout.fragment_edit_task, container, false)
+
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {

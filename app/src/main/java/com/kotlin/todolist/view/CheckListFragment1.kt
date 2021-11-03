@@ -28,6 +28,7 @@ class CheckListFragment1 : Fragment() {
     ): View? {
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_check_list1, container, false)
+
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
