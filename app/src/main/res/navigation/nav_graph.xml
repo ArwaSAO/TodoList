@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/checkListFragment1">
+
+    <fragment
+        android:id="@+id/checkListFragment1"
+        android:name="com.kotlin.todolist.view.CheckListFragment1"
+        android:label="Start Doing Your List  arwa!! "
+        tools:layout="@layout/fragment_check_list1">
+        <action
+            android:id="@+id/action_checkListFragment1_to_editTaskFragment"
+            app:destination="@id/editTaskFragment" />
+        <action
+            android:id="@+id/action_checkListFragment1_to_taskDetailsFragment"
+            app:destination="@id/taskDetailsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/taskDetailsFragment"
+        android:name="com.kotlin.todolist.view.TaskDetailsFragment"
+        android:label="Caching Your Task  arwa!!"
+        tools:layout="@layout/fragment_task_details" />
+    <fragment
+        android:id="@+id/editTaskFragment"
+        android:name="com.kotlin.todolist.view.EditTaskFragment"
+        android:label="Start Organizing Your time arwa !!"
+        tools:layout="@layout/fragment_edit_task" />
+</navigation>
