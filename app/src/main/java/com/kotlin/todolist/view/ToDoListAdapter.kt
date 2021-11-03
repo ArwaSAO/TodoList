@@ -1,5 +1,6 @@
 package com.kotlin.todolist.view
 
+import android.graphics.Color
 import android.graphics.Paint
 import android.view.LayoutInflater
 import android.view.View
@@ -76,8 +77,10 @@ RecyclerView.Adapter<ToDoListAdapter.ToDoListViewHolder>(){
 
             if(holder.taskStatusCheckBox.isChecked){
             holder.taskNameTextView.setPaintFlags(Paint.STRIKE_THRU_TEXT_FLAG)
+                holder.taskNameTextView.setTextColor(Color.GRAY)
         }else {
             holder.taskNameTextView.setPaintFlags(0)
+                holder.taskNameTextView.setTextColor(Color.BLACK)
             }
         }
 
