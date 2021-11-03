@@ -22,7 +22,9 @@
         <com.google.android.material.card.MaterialCardView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            app:cardBackgroundColor="@color/design_default_color_surface">
+            app:cardBackgroundColor="@color/design_default_color_surface"
+            app:cardCornerRadius="10dp"
+            app:cardPreventCornerOverlap="true">
 
             <TextView
                 android:id="@+id/check_list_text_view"

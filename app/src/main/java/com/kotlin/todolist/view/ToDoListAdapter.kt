@@ -46,7 +46,7 @@ RecyclerView.Adapter<ToDoListAdapter.ToDoListViewHolder>(){
         val item = items[position]
 
         holder.taskNameTextView.text = item.taskName
-        holder.taskdodate.text =  item.taskDodate
+        holder.taskdodate.text =  item.taskDuedate
        // holder.taskdate.text =  item.taskDate
 
         holder.deleteTaskButton.setOnClickListener {view ->
@@ -65,7 +65,7 @@ RecyclerView.Adapter<ToDoListAdapter.ToDoListViewHolder>(){
 
         val currentDate = Date()
         val format = SimpleDateFormat("yyyy/MM/dd")
-        val deadline = format.parse(item.taskDodate)
+        val deadline = format.parse(item.taskDuedate)
         if (currentDate>deadline){
             holder.taskNameTextView.paintFlags = Paint.STRIKE_THRU_TEXT_FLAG
         }

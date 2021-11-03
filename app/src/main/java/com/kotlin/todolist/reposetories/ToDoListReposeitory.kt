@@ -2,6 +2,7 @@ package com.kotlin.todolist.reposetories
 
 import android.content.Context
 import androidx.room.Room
+import com.kotlin.todolist.database.TaskDao
 import com.kotlin.todolist.database.ToDoListDataBase
 import com.kotlin.todolist.database.model.ToDoListItemModel
 import java.lang.Exception
@@ -16,13 +17,13 @@ class ToDoListRepository(context: Context) {
             DATABASE_NAME
         ).fallbackToDestructiveMigration().build()
 
-    private val toDoListDao = database.toDoListDao()
+    private val taskDao = database.TaskDao()
 
-    fun getItems() = toDoListDao.getItems()
+    fun getItems() = taskDao.getItems()
 
-    suspend fun addItem(itemModel: ToDoListItemModel) = toDoListDao.addItemModel(itemModel)
-    suspend fun upDateItem(itemModel: ToDoListItemModel) = toDoListDao.UpdateItemModel(itemModel)
-    suspend fun deleteItem(itemModel: ToDoListItemModel) = toDoListDao.deleteItemModel(itemModel)
+    suspend fun addItem(itemModel: ToDoListItemModel) = taskDao.addItemModel(itemModel)
+    suspend fun upDateItem(itemModel: ToDoListItemModel) = taskDao.UpdateItemModel(itemModel)
+    suspend fun deleteItem(itemModel: ToDoListItemModel) = taskDao.deleteItemModel(itemModel)
 
     companion object {
         private var instance: ToDoListRepository? = null

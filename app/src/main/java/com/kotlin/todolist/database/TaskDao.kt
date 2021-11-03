@@ -6,7 +6,7 @@ import com.kotlin.todolist.database.model.ToDoListItemModel
 
 
 @Dao
-interface ToDoListDao {
+interface TaskDao {
 
 
 

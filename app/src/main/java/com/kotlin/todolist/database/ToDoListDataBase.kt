@@ -6,8 +6,9 @@ import com.kotlin.todolist.database.model.ToDoListItemModel
 
 
 
-@Database(entities = [ToDoListItemModel::class], version = 1)
+@Database(entities = [ToDoListItemModel::class], version = 3)
 abstract class ToDoListDataBase: RoomDatabase() {
 
-    abstract fun toDoListDao():ToDoListDao
+    abstract fun TaskDao():TaskDao
+    //abstract fun TaskDao(): Any
 }

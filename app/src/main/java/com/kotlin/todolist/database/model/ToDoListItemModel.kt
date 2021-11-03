@@ -9,8 +9,8 @@ data class ToDoListItemModel(
     var taskName: String,
     var taskDescription: String,
     var taskDate: String,
-    var taskDodate: String,
-    var status: Boolean,
+    var taskDuedate: String,
+    var status: Boolean = false,
     @PrimaryKey(autoGenerate = true)
     val id: Int = 0
 )

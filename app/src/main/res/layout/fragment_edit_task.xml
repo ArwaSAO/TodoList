@@ -18,8 +18,10 @@
             android:layout_width="match_parent"
             android:layout_height="80dp"
             android:layout_marginLeft="15dp"
-            android:layout_marginTop="30dp"
-            android:layout_marginRight="15dp">
+            android:layout_marginTop="15dp"
+            android:layout_marginRight="15dp"
+            app:cardCornerRadius="15dp"
+            app:cardPreventCornerOverlap="false">
 
             <EditText
                 android:id="@+id/add_your_task"
@@ -33,7 +35,7 @@
                 android:fontFamily="sans-serif-condensed"
                 android:hint="Add Your Task:"
                 android:inputType="textPersonName"
-                android:paddingLeft="30dp"
+                android:paddingLeft="15dp"
                 android:paddingRight="30dp"
                 android:textColor="@color/black"
                 android:textColorHint="@android:color/holo_orange_dark" />
@@ -45,7 +47,8 @@
             android:layout_height="400dp"
             android:layout_marginLeft="15dp"
             android:layout_marginTop="15dp"
-            android:layout_marginRight="15dp">
+            android:layout_marginRight="15dp"
+            app:cardCornerRadius="15dp">
 
             <TextView
                 android:id="@+id/your_task_date"
@@ -65,24 +68,26 @@
                 android:layout_height="344dp"
                 android:layout_gravity="center"
                 android:layout_marginTop="30dp"
+                android:datePickerMode="calendar"
                 android:foregroundGravity="center"
                 android:headerBackground="@android:color/holo_orange_light"
-                android:padding="30dp" />
+                android:padding="10dp" />
 
         </androidx.cardview.widget.CardView>
 
         <androidx.cardview.widget.CardView
             android:id="@+id/cardView"
             android:layout_width="match_parent"
-            android:layout_height="150dp"
+            android:layout_height="125dp"
             android:layout_marginLeft="15dp"
             android:layout_marginTop="15dp"
-            android:layout_marginRight="15dp">
+            android:layout_marginRight="15dp"
+            app:cardCornerRadius="15dp">
 
             <EditText
                 android:id="@+id/your_task_description"
                 android:layout_width="match_parent"
-                android:layout_height="200dp"
+                android:layout_height="125dp"
                 android:layout_marginLeft="30dp"
                 android:layout_marginRight="30dp"
                 android:backgroundTint="@color/design_default_color_surface"
@@ -103,13 +108,14 @@
     <Button
         android:id="@+id/task_save_button"
         android:layout_width="0dp"
-        android:layout_height="wrap_content"
+        android:layout_height="55dp"
         android:layout_marginLeft="15dp"
-        android:layout_marginTop="15dp"
+        android:layout_marginTop="20dp"
         android:layout_marginRight="15dp"
         android:layout_marginBottom="20dp"
         android:backgroundTint="@android:color/holo_orange_light"
         android:text=" Save your Task"
+        app:cornerRadius="15dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
