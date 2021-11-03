@@ -43,7 +43,7 @@ class TaskDetailsFragment : Fragment() {
         //val yourTaskDateTextView: TextView = view.findViewById(R.id.yourtask_date)
       //  val taskBackButton: Button = view.findViewById(R.id.back_button)
         val editTaskButton: ImageButton = view.findViewById(R.id.edittask_button)
-        val editdate: ImageButton = view.findViewById(R.id.editdate_imageButton)
+//        val editdate: ImageButton = view.findViewById(R.id.editdate_imageButton)
 
         listViewModel.selectedItemMutableLiveData.observe(viewLifecycleOwner, Observer {
             it?.let { item ->
@@ -74,7 +74,7 @@ class TaskDetailsFragment : Fragment() {
 
         dateRangePicker.setButton(DialogInterface.BUTTON_POSITIVE, "OK") { _, _ ->
             yourTaskDoDateTextView.setText("${dateRangePicker.datePicker.year}/" +
-                    "${dateRangePicker.datePicker.month}/" +
+                    "${dateRangePicker.datePicker.month+1}/" +
                     "${dateRangePicker.datePicker.dayOfMonth}")
         }
 //        taskBackButton.setOnClickListener {
