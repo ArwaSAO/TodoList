@@ -1,7 +1,8 @@
-# TodoList
 ![tuwaiq.jpg](https://github.com/ArwaSAO/TodoList/blob/6acc02e9458cd6e9d3313ee8e0977ccdc52a7211/tuwaiq.jpg.jpeg)
+# TodoList
 # list of technologies:
  - kotlin
+ - Room Database
  - Android Studio
  - Figma
  - Google
@@ -43,4 +44,5 @@ unsolved problems:
  - One of favorite function was date picker it was easy and make the code easy.
  - Also other interesting  that I had learned this project is "Material Card View" it give the design more
    flexibility to work with and change it's shape, color, stroke.....etc
+# App Results
 ![Frame 6](https://github.com/ArwaSAO/TodoList/blob/a3fef7cebede9737b1f05e52d385329736ba14d2/Frame%206.png)
