@@ -43,9 +43,4 @@ unsolved problems:
  - One of favorite function was date picker it was easy and make the code easy.
  - Also other interesting  that I had learned this project is "Material Card View" it give the design more
    flexibility to work with and change it's shape, color, stroke.....etc
-![Screenshot_20211103_164659_com.kotlin.todolist](https://github.com/ArwaSAO/TodoList/blob/6780bc947453beb439fd305e0ff1cd2768aceb41/Screenshot_20211103_164659_com.kotlin.todolist.jpg)
-![Screenshot_20211103_164705_com.kotlin.todolist](https://github.com/ArwaSAO/TodoList/blob/6780bc947453beb439fd305e0ff1cd2768aceb41/Screenshot_20211103_164705_com.kotlin.todolist.jpg)
-![Screenshot_20211103_222051_com.kotlin.todolist](https://github.com/ArwaSAO/TodoList/blob/6780bc947453beb439fd305e0ff1cd2768aceb41/Screenshot_20211103_222051_com.kotlin.todolist.jpg)
-![Screenshot_20211103_165148_com.kotlin.todolist](https://github.com/ArwaSAO/TodoList/blob/6780bc947453beb439fd305e0ff1cd2768aceb41/Screenshot_20211103_165148_com.kotlin.todolist.jpg)
-![Screenshot_20211103_165154_com.kotlin.todolist](https://github.com/ArwaSAO/TodoList/blob/6780bc947453beb439fd305e0ff1cd2768aceb41/Screenshot_20211103_165154_com.kotlin.todolist.jpg)
-![Screenshot_20211103_165202_com.kotlin.todolist](https://github.com/ArwaSAO/TodoList/blob/6780bc947453beb439fd305e0ff1cd2768aceb41/Screenshot_20211103_165202_com.kotlin.todolist.jpg)
+![Frame 6](https://github.com/ArwaSAO/TodoList/blob/a3fef7cebede9737b1f05e52d385329736ba14d2/Frame%206.png)
